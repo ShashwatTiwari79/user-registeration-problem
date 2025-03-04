@@ -17,6 +17,9 @@ def is_valid_mobile(number):
     else:
         return False
 def validate_password(password):
+    special_chars = re.findall(r"[^a-zA-Z0-9]", password)
+    if len(special_chars) != 1:
+        return False
     if len(password) < 8:
         return False
     if not re.search(r'[A-Z]', password):
