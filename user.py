@@ -16,14 +16,7 @@ def is_valid_mobile(number):
         return True
     else:
         return False
-def validate_password(password):
-    if len(password) >= 8:
-        if re.match(r'[A-Z]', password):
-                    return True
-        else:
-            return False
-    else:
-        return False
+
 if __name__ == '__main__':
     first_name = input("Enter your first name:")
     last_name = input("Enter your last name:")
@@ -49,10 +42,5 @@ if __name__ == '__main__':
         print("mobile number is valid")
     else:
         print("mobile number is invalid")
-    password = input("Enter your password:")
-    check_password = validate_password(password)
-    if check_password:
-        print("password is valid")
-    else:
-        print("password is invalid")
+   
         
