@@ -10,6 +10,12 @@ def email_verification(email):
         return True
     else:
         return False
+def is_valid_mobile(number):
+    pattern = r'^91\s\d{10}$'
+    if re.match(pattern, number):
+        return True
+    else:
+        return False
 if __name__ == '__main__':
     first_name = input("Enter your first name:")
     last_name = input("Enter your last name:")
@@ -23,9 +29,16 @@ if __name__ == '__main__':
         print("last name is valid")
     else:
         print("last name is invalid")
-    email = input("Enter your email id:")
-    check_email = email_verification(email)
-    if check_email:
-        print("email is valid")
-    else:
-        print("email is invalid")
+    if check_first_name and check_second_name:
+        email = input("Enter your email id:")
+        check_email = email_verification(email)
+        if check_email:
+            print("email is valid")
+            mobile_number = input("Enter your mobile number:")
+            check_mobile_number = is_valid_mobile(mobile_number)
+            if check_mobile_number:
+                print("mobile number is valid")
+            else:
+                print("mobile number is invalid")
+        else:
+            print("email is invalid")
